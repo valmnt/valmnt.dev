@@ -6,7 +6,7 @@ function commands(command) {
     switch(command) {
         case "valmnt avatar":
             outputCommand(command, `
-                <img width=250 height=250 style="border-radius: 100%;" src="./avatar.png" />
+                <img width=250 height=250 style="border-radius: 100%;" src="./assets/avatar.png" />
             `)
         break
         case "valmnt about":
@@ -40,8 +40,8 @@ function commands(command) {
         break
         case "valmnt contact":
             outputCommand(command, `
-                * Linkedin: https://www.linkedin.com/in/valentin-mont/ <br />
-                * Github: https://github.com/valmnt <br />
+                * Linkedin: <a style="color: white;" href="https://www.linkedin.com/in/valentin-mont/">https://www.linkedin.com/in/valentin-mont/</a> <br />
+                * Github: <a style="color: white;" href="https://github.com/valmnt">https://github.com/valmnt</a> <br />
                 * Phone number: +33651845896 <br />
                 * Mail: valentinmont8@gmail.com
             `)
