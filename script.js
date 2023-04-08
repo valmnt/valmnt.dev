@@ -57,13 +57,9 @@ function commonCommands(command) {
 
 function valmntcommands(command) {
     switch(command) {
-        case "valmnt avatar":
-            outputCommand(command, `
-                <img width=250 height=250 style="border-radius: 100%;" src="./assets/avatar.png" />
-            `)
-        break
         case "valmnt about":
             outputCommand(command, `
+                <img width=250 height=250 style="border-radius: 100%;" src="./assets/avatar.png" /> <br /><br />
                 Hello! Let me introduce myself. <br /><br />
                 My name is Mont Valentin and I am a 23-year-old iOS developer currently pursuing a master's degree <br /> while working in an alternating internship at SFR in Grenoble. </br /><br />
                 As an iOS developer, I have gained valuable experience in creating and maintaining mobile applications for Apple devices. <br /><br />
