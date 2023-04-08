@@ -3,6 +3,59 @@ var historic = ""
 
 function commands(command) {
     output.innerHTML = ""
+    if (command.includes("valmnt")) {
+        valmntcommands(command)
+    } else {
+        commonCommands(command)
+    }
+    output.innerHTML += historic
+    initInput()
+    window.scrollTo(0, document.body.scrollHeight)
+}
+
+function commonCommands(command) {
+    switch(true) {
+        case command == "clear":
+            historic = ""
+        break
+        case command == "whoami":
+            outputCommand(command, `
+                guest
+            `)
+        break
+        case command == "ls":
+            outputCommand(command, ``)
+        break
+        case command == "pwd":
+            outputCommand(command, `
+                /Users/guest
+            `)
+        break
+        case command == "reboot":
+            location.reload()
+        break
+        case command.includes("ls"):
+            outputCommand(command, `
+                ls: No such file or directory
+            `)
+        break
+        case command == "cd":
+            outputCommand(command, ``)
+        break
+        case command.includes("cd"):
+            outputCommand(command, `
+                cd: No such file or directory
+            `)
+        break
+        default:
+            outputCommand(command, `
+                command not found: ${command}
+            `)
+        break
+    }
+}
+
+function valmntcommands(command) {
     switch(command) {
         case "valmnt avatar":
             outputCommand(command, `
@@ -46,24 +99,18 @@ function commands(command) {
                 * Mail: valentinmont8@gmail.com
             `)
         break
-        case "clear":
-            historic = ""
-            break
         default: 
         outputCommand(command, `
             valmnt: '${command}' is not a valmnt command.
         `)
         break
     }
-    output.innerHTML += historic
-    initInput()
-    window.scrollTo(0, document.body.scrollHeight)
 }
 
 function outputCommand(command, output) {
     historic += `
     <p style="color: #17F018; font-size: 130%; font-family:monospace;">
-        [root@localhost ~]$ ${command}
+        [guest@localhost ~]$ ${command}
     </p>
     <p style="color: white; font-size: 130%; font-family:monospace;">
         ${output}
@@ -74,7 +121,7 @@ function outputCommand(command, output) {
 function initInput() {
     output.innerHTML += `
     <p style="color: #17F018; font-size: 130%; font-family:monospace;">
-        [root@localhost ~]$ <input id="input" style="background-color: transparent; outline: none; border: 0; color: #17F018; font-size: 100%; font-family:monospace" autofocus/>
+        [guest@localhost ~]$ <input id="input" style="background-color: transparent; outline: none; border: 0; color: #17F018; font-size: 100%; font-family:monospace" autofocus/>
     </p>
     `
     
