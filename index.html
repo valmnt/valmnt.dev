@@ -8,7 +8,7 @@
     <title>valmnt.dev</title>
 </head>
 <body style="background-color: #1A1A1A;">
-    <div style="width: 100%; height: 20vh; display: flex; justify-content: center; align-items: center; padding-top: 3%;">
+    <div id="top">
     <img width="100" height="100" src="./assets/xcode.png" alt="">
     <img width="100" height="100" src="./assets/macOS.png" alt="">
     <pre style="color: #17F018; font-size: 120%;">
@@ -23,7 +23,7 @@
               ░        ░  ░    ░  ░       ░            ░            ░     ░       ░  ░     ░
              ░                                                      ░   ░                 ░
     </pre>
-    <img width="280" height="280" src="./assets/swift.png" alt="">
+        <img width="280" height="280" src="./assets/swift.png" alt="">
     </div>
 
     <hr style="width: 100%; margin-top: 2%; margin-bottom: 2%; opacity: 0.5;" />
@@ -50,6 +50,31 @@
     <style>
         span {
             color: #17F018;
+        }
+
+        #top {
+            width: 100%; 
+            height: 20vh; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            padding-top: 3%;
+        }
+
+        @media screen and (max-width: 1270px) {
+            img {
+                visibility: hidden;
+            }
+            pre {
+                visibility: hidden;
+            }
+            hr {
+                visibility: hidden;
+            }
+            #top {
+                height: 0vh;
+                padding-top: 0%;
+            }
         }
     </style>
 
